@@ -1,0 +1,6 @@
+# Use the following lines if motorSmartMotor was built inside motor
+MOTOR=
+-include $(MOTOR)/configure/RELEASE
+# Use the following lines if motorSmartMotor was built outside motor
+#!MOTOR_SMARTMOTOR=
+#!-include $(MOTOR_SMARTMOTOR)/configure/RELEASE.local
