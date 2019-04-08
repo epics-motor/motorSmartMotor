@@ -1,8 +1,5 @@
 #!../../bin/linux-x86_64/smartMotor
 
-## You may have to change smartMotor to something else
-## everywhere it appears in this file
-
 < envPaths
 
 cd "${TOP}"
@@ -11,11 +8,17 @@ cd "${TOP}"
 dbLoadDatabase "dbd/smartMotor.dbd"
 smartMotor_registerRecordDeviceDriver pdbbase
 
-## Load record instances
-#dbLoadRecords("db/xxx.db","user=kpetersn")
-
 cd "${TOP}/iocBoot/${IOC}"
+
+## motorUtil (allstop & alldone)
+dbLoadRecords("$(MOTOR)/db/motorUtil.db", "P=smartMotor:")
+
+##
+< SmartMotor.cmd
+
 iocInit
 
-## Start any sequence programs
-#seq sncxxx,"user=kpetersn"
+## motorUtil (allstop & alldone)
+motorUtilInit("smartMotor:")
+
+# Boot complete

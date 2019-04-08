@@ -21,12 +21,13 @@ smartMotor_DBD += base.dbd
 # Include dbd files from all support applications:
 #ifdef ASYN
 smartMotor_DBD += asyn.dbd
+smartMotor_DBD += drvAsynSerialPort.dbd
 #endif
 smartMotor_DBD += motorSupport.dbd
-smartMotor_DBD += devSmartMotor.dbd
+smartMotor_DBD += devSmartMotorMotor.dbd
 
 # Add all the support libraries needed by this IOC
-smartMotor_LIBS += smartMotor
+smartMotor_LIBS += SmartMotor
 smartMotor_LIBS += motor
 #ifdef ASYN
 smartMotor_LIBS += asyn
