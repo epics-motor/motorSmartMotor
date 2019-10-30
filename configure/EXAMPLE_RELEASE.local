@@ -1,4 +1,4 @@
 MOTOR=
--include $(MOTOR)/configure/RELEASE
+-include $(MOTOR)/modules/RELEASE.$(EPICS_HOST_ARCH).local
 # path to motorSmartMotor is needed to build the IOC inside motorSmartMotor, but outside motor
 MOTOR_SMARTMOTOR=
